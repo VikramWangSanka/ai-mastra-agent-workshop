@@ -14,39 +14,15 @@ This workshop demonstrates how to build AI agents that can analyze GitHub pull r
 
 Before the workshop, you need to complete the prerequisites:
 
-- [Prerequisites Guide](PREREQUISITES.MD)
+- [Prerequisites Guide](https://timlolkema.nl/prerequisites.html)
 
 During the workshop itself we will go through the set-up guide together:
 
-- [Set-Up Guide](SETUP.md)
+- [Set-Up Guide](https://timlolkema.nl/setup.html)
 
 ## Workshop Exercises
 
-### Step 1: Create a SCRUM issue
-
-- Create a SCRUM issue on the digital scrum board **OR** use an existing one
-  - [https://scrum-board-navy.vercel.app/](https://scrum-board-navy.vercel.app/)
-  - Note down the issue number you want to use
-
-### Step 2: Vibe code your new feature and create a pull request
-
-- Open the `demo-webshop` repository in your code editor
-- Vibe code a new feature (based on issue in scrumboard - step 1) and create a pull request
-  - Make sure to change the base repository for this pull request to your fork
-- See the pipeline in action
-  - It should post the test plan as comment and after execution of the workflow, it should post the test report as comment
-
-### Step 3: Run Mastra.io Playground and play around with the agents and tools
-
-- Mastra.io Playground
-  - Start Mastra.io Playground with `npm run dev`
-  - Play around with the testplan agent, supply the pull request URL
-  - Play around with the available tools
-  - Start the workflow, supply the pull request URL
-
-- Browser Use
-  - Inspect the sessions in the Browser Use dashboard
-  - [https://cloud.browser-use.com/tasks](https://cloud.browser-use.com/tasks)
+- [Workshop Exercises](https://timlolkema.nl/exercises.html)
 
 ## Usefull Resources
 
