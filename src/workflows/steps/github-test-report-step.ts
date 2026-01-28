@@ -5,15 +5,29 @@ import { parseGitHubUrl } from "../../mastra/helpers";
 import { githubClient } from "../../mastra/github-client";
 import { handleGitHubResponse } from "../../mastra/error-handler";
 
+const formatResultDescription = (description: string) => {
+  return description
+    .split("\n")
+    .map((line) => `> ${line}`)
+    .join("\n");
+};
+
 const formatTestReport = (
-  testCases: Array<{ title: string; status: "success" | "fail" }>
+  testCases: Array<{
+    title: string;
+    status: "success" | "fail";
+    resultDescription?: string;
+  }>,
 ) => {
   return testCases
     .map((testCase) => {
       const emoji = testCase.status === "success" ? "✅" : "❌";
-      return `${emoji} **${testCase.title}**`;
+      const description = testCase.resultDescription
+        ? `\n${formatResultDescription(testCase.resultDescription)}`
+        : "";
+      return `${emoji} **${testCase.title}**${description}`;
     })
-    .join("\n");
+    .join("\n\n");
 };
 
 export const githubTestReportStep = createStep({
@@ -39,7 +53,7 @@ export const githubTestReportStep = createStep({
       {
         body: commentBody,
       },
-      token
+      token,
     );
 
     handleGitHubResponse(response, "post comment");

@@ -10,6 +10,7 @@ export const testExecutionOutputSchema = z.object({
     z.object({
       title: z.string(),
       status: z.enum(["success", "fail"]),
+      resultDescription: z.string().optional(),
     })
   ),
 });
@@ -80,12 +81,15 @@ export const executeTestsStep = createStep({
           return {
             title: testCase.title,
             status: status as "success" | "fail",
+            resultDescription: task.output ?? undefined,
           };
         } catch (error) {
           console.error(`Test case "${testCase.title}" failed:`, error);
+          const errorMessage = error instanceof Error ? error.message : "Unknown error occurred";
           return {
             title: testCase.title,
             status: "fail" as const,
+            resultDescription: `Error: ${errorMessage}`,
           };
         }
       })
