@@ -18,14 +18,9 @@ export const generateTestPlanStep = createStep({
   outputSchema: testPlanOutputSchema,
 
   execute: async (context) => {
-    const response = await testplanAgent.generateVNext(
-      [
-        {
-          role: "user",
-          content: context.inputData.pullRequestUrl,
-        },
-      ],
-      { output: testPlanOutputSchema }
+    const response = await testplanAgent.generate(
+      context.inputData.pullRequestUrl,
+      { structuredOutput: { schema: testPlanOutputSchema } }
     );
 
     if (!response.object) {

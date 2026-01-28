@@ -11,7 +11,7 @@ export const getPullRequestComments = createTool({
     pullRequestUrl: z.string(),
   }),
   description: `Fetches comments from a GitHub pull request. Useful for understanding discussion and requirements.`,
-  execute: async ({ context: { pullRequestUrl } }) => {
+  execute: async ({ pullRequestUrl }) => {
     const { apiBase, number } = parseGitHubUrl(pullRequestUrl);
     const apiUrl = `${apiBase}/issues/${number}/comments`;
 

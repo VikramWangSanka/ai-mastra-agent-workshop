@@ -11,7 +11,7 @@ export const getPullRequestDiff = createTool({
     pullRequestUrl: z.string(),
   }),
   description: `Fetches the file changes (diff) from a GitHub pull request URL`,
-  execute: async ({ context: { pullRequestUrl } }) => {
+  execute: async ({ pullRequestUrl }) => {
     const { apiBase, number } = parseGitHubUrl(pullRequestUrl);
     const apiUrl = `${apiBase}/pulls/${number}/files`;
 

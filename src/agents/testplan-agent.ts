@@ -6,6 +6,7 @@ import { getPullRequest } from "../tools/github/get-pull-request-tool";
 import { getScrumIssue } from "../tools/scrum/get-scrum-issue-tool";
 
 export const testplanAgent = new Agent({
+  id: "testplan-agent",
   name: "Test Plan Agent",
   instructions: `You are a helpful ISTQB certified assistant that creates a set of test cases that need to be tested in a later stage by a different AI agent.
 
@@ -71,14 +72,14 @@ IMPORTANT: FOLLOW THESE INSTRUCTIONS IN ORDER
 With an empty basket, add Apple once and then add Banana once. Expected: the basket contains two lines: 1x Apple and 1x Banana.."
 
 Remember: You are creating test cases for a functional tester who will use a browser, so focus on user interactions and visible outcomes.`,
-  model: openai("gpt-5-mini"),
+  model: openai("gpt-5.1"),
   tools: {
     getPullRequestDiff,
     getPullRequestComments,
     getPullRequest,
     getScrumIssue,
   },
-  defaultStreamOptions: {
+  defaultOptions: {
     maxSteps: 10,
   },
 });

@@ -11,7 +11,7 @@ export const getPullRequest = createTool({
     pullRequestUrl: z.string(),
   }),
   description: `Fetches a GitHub pull request by URL. Use this to get PR details and state.`,
-  execute: async ({ context: { pullRequestUrl } }) => {
+  execute: async ({ pullRequestUrl }) => {
     const { apiBase, number } = parseGitHubUrl(pullRequestUrl);
     const apiUrl = `${apiBase}/pulls/${number}`;
 

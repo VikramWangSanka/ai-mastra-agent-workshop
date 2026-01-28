@@ -16,7 +16,7 @@ export const waitForPreviewEnvironmentStep = createStep({
 
   execute: async (context) => {
     // Get the pull request URL from the initial workflow data
-    const pullRequestUrl = context.getInitData().pullRequestUrl;
+    const { pullRequestUrl } = context.getInitData() as { pullRequestUrl: string };
     const { apiBase, number } = parseGitHubUrl(pullRequestUrl);
     const commentsUrl = `${apiBase}/issues/${number}/comments`;
 

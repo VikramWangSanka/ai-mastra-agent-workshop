@@ -11,16 +11,16 @@
   "author": "Tim Lolkema",
   "license": "CC-BY-NC-SA-4.0",
   "dependencies": {
-    "@ai-sdk/openai": "2.0.32",
-    "@mastra/core": "0.17.1",
-    "@mastra/deployer-vercel": "0.12.1",
-    "browser-use-sdk": "2.0.4",
-    "zod": "4.1.9"
+    "@ai-sdk/openai": "3.0.21",
+    "@mastra/core": "1.0.4",
+    "@mastra/deployer-vercel": "1.0.1",
+    "browser-use-sdk": "2.0.13",
+    "zod": "4.3.6"
   },
   "devDependencies": {
     "@types/node": "24.5.2",
     "dotenv": "17.2.2",
-    "mastra": "0.13.1",
+    "mastra": "1.0.1",
     "typescript": "5.9.2"
   }
 }

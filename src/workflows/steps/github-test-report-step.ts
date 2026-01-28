@@ -36,7 +36,7 @@ export const githubTestReportStep = createStep({
   outputSchema: z.object({ success: z.boolean() }),
   execute: async ({ inputData, getInitData }) => {
     const { needsTesting, testCases } = inputData;
-    const { pullRequestUrl } = getInitData();
+    const { pullRequestUrl } = getInitData() as { pullRequestUrl: string };
     const token = process.env.GITHUB_TOKEN;
 
     // Parse PR URL

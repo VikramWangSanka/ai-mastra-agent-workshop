@@ -62,7 +62,7 @@ export const githubTestPlanCommentStep = createStep({
   }),
   execute: async ({ inputData, getInitData, bail }) => {
     const { needsTesting, testCases } = inputData;
-    const { pullRequestUrl } = getInitData();
+    const { pullRequestUrl } = getInitData() as { pullRequestUrl: string };
     const token = process.env.GITHUB_TOKEN;
 
     // Parse PR URL
