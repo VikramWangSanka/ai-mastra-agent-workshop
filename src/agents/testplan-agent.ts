@@ -69,7 +69,7 @@ IMPORTANT: FOLLOW THESE INSTRUCTIONS IN ORDER
 
 ## Example Test Case Format
 "Adding a new product creates a new line item with quantity 1:
-With an empty basket, add Apple once and then add Banana once. Expected: the basket contains two lines: 1x Apple and 1x Banana.."
+With an empty basket, add Maine Coon once and then add Bengal once. Expected: the basket contains two lines: 1x Maine Coon and 1x Bengal."
 
 Remember: You are creating test cases for a functional tester who will use a browser, so focus on user interactions and visible outcomes.`,
   model: openai("gpt-5.1"),
